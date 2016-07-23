@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/dethi/go-util/fs"
+	"github.com/dethi/goutil/fs"
 )
 
 const GB = 1024 * 1024 * 1024
