@@ -7,10 +7,10 @@ import (
 	"github.com/dethi/goutil/fs"
 )
 
-const GB = 1024 * 1024 * 1024
-
 func main() {
-	if st, err := fs.GetFsStats(""); err != nil {
+	const GB = 1024 * 1024 * 1024
+
+	if st, err := fs.GetStats(""); err != nil {
 		fmt.Fprintln(os.Stderr, err)
 	} else {
 		fmt.Printf("Free: %d GB\nTotal: %d GB\nUsage: %3.2f%%\n",
