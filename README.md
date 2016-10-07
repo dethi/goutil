@@ -4,9 +4,10 @@ Monolithic repository for Go packages and binaries.
 
 ## Packages
 
-- `fs`: filesystem related
+- `fs`: Filesystem related
 
 
 ## Binaries
 
-- `cmd/statico`: yet another simple static server
+- `cmd/statico`: Yet another static server
+- `cmd/jsony`: Stdin JSON formatter
