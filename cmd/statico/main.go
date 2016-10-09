@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-func LogRequest(handler http.Handler) http.Handler {
+func logHandler(handler http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		log.Printf("[%s] %s - %s", r.Method, r.RemoteAddr, r.URL)
 		handler.ServeHTTP(w, r)
@@ -19,5 +19,5 @@ func main() {
 	flag.Parse()
 
 	fileServer := http.FileServer(http.Dir(*staticDir))
-	log.Fatal(http.ListenAndServe(*listenAddr, LogRequest(fileServer)))
+	log.Fatal(http.ListenAndServe(*listenAddr, logHandler(fileServer)))
 }
