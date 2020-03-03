@@ -8,9 +8,9 @@ import (
 	sys "golang.org/x/sys/unix"
 )
 
-// Stats hold the file system statistics, in bytes. Only the Usage is in
-// percentage.
-type Stats struct {
+// Info holds the filesystem statistics. All the fields are in bytes, except for
+// Usage which is a percentage.
+type Info struct {
 	Free      uint64
 	Available uint64
 	Size      uint64
@@ -18,9 +18,9 @@ type Stats struct {
 	Usage     float64
 }
 
-// GetStats returns an object holding the file system usage of path.
-// If the path is empty, it uses the current working directory.
-func GetStats(path string) (*Stats, error) {
+// Stat returns the Info structure describing filesystem usage. If the path is
+// empty, it uses the current working directory.
+func Stat(path string) (*Info, error) {
 	if path == "" {
 		dir, err := os.Getwd()
 		if err != nil {
@@ -34,7 +34,7 @@ func GetStats(path string) (*Stats, error) {
 		return nil, err
 	}
 
-	var stats = &Stats{
+	stats := &Info{
 		Free:      st.Bfree * uint64(st.Bsize),
 		Available: st.Bavail * uint64(st.Bsize),
 		Size:      st.Blocks * uint64(st.Bsize),

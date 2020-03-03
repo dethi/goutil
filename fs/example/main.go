@@ -10,10 +10,10 @@ import (
 func main() {
 	const GB = 1024 * 1024 * 1024
 
-	if st, err := fs.GetStats(""); err != nil {
+	if fsinfo, err := fs.Stat(""); err != nil {
 		fmt.Fprintln(os.Stderr, err)
 	} else {
 		fmt.Printf("Free: %d GB\nTotal: %d GB\nUsage: %3.2f%%\n",
-			st.Free/GB, st.Size/GB, st.Usage*100)
+			fsinfo.Free/GB, fsinfo.Size/GB, fsinfo.Usage*100)
 	}
 }
