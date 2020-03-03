@@ -1,6 +1,8 @@
 # goutil [![GoReportCard](https://goreportcard.com/badge/github.com/dethi/goutil)](https://goreportcard.com/report/github.com/dethi/goutil)
 
-Monolithic repository for Go packages and binaries.
+Yet another monolithic repository for Go packages and binaries.
+
+The packages are small. It is a good idea to just copy/paste what you need instead of adding this repository as a dependency. This repository will probably never follow semantic versioning.
 
 ## Packages
 
