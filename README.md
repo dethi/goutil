@@ -6,7 +6,11 @@ The packages are small. It is a good idea to just copy/paste what you need inste
 
 ## Packages
 
-- `fs`: Filesystem related
+- `envflag`: `flag` with support for environment variable
+- `errgroup`: `errgroup` with bounded concurrently
+- `fs`: filesystem related functions
+- `safepprof`: `pprof` configured to be used in production
+- `sqlstore`: `sql.DB` with prepared statement cache
 
 ## Binaries
 
